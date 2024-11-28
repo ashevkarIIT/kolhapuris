@@ -1,0 +1,171 @@
+/* PumaLandingPage.css */
+
+.landing-page {
+  font-family: 'Geogrotesque', serif;
+    margin: 0 auto;
+    padding: 0px;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .shop-now-button{ 
+    position:absolute;
+    top: 50%;
+    right: 10%;
+    padding: 10px;
+  }
+.background-image{
+  background-image: url('/src/components/images/image2.png');
+  background-size:cover;
+  background-position: top;
+  height: 60vh;
+}
+ 
+  /* Banner */
+  .scrolling-banner {
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    white-space: nowrap;
+    padding: 0 20px;
+    ;
+  }
+  .banner-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 25s linear infinite;
+    position: relative;
+  }
+  .banner-content span {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+  }
+  @keyframes scroll {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  h2, h3, h4, h5 {
+    text-transform: uppercase;
+  }
+
+  
+  .gift-sections {
+    overflow-x:scroll;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .gift-sections ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; 
+    flex-shrink: 0;
+  }
+  .gift-sections li {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-end; /* Pushes text to the bottom */
+    position: relative;
+    height: 30vh;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 20%;
+    max-width: 20%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    color: rgb(0, 0, 0);
+    text-align: left; 
+  }
+  @media (max-width: 1200px) {
+    .gift-sections li {
+        min-width: 45%; /* Each item takes up at least 45% of the container's width */
+    }
+  }
+  .span-text{
+    position: absolute;
+    background-color: #f4f4f4;
+  }
+  .img1, .img2, .img3, .img4 {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    
+}
+.img1 {
+    background-image: url('/src/components/images/image1.jpg');
+}
+
+.img2 {
+  background-image: url('/src/components/images/image2.png');
+}
+
+.img3 {
+  background-image: url('/src/components/images/image2.png');
+}
+
+.img4 {
+  background-image: url('/src/components/images/image2.png');
+}
+
+.text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+  .shopping-made-easy {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .shopping-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .option {
+    flex-basis: calc(25% - 20px);
+    margin: 10px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .gift-sections {
+      flex-direction: column;
+    }
+  
+    .gift-category {
+      margin: 10px 0;
+    }
+  
+    .option {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .option {
+      flex-basis: 100%;
+    }
+  }
+

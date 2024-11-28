@@ -1,0 +1,65 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;  /* Slightly adjusted padding for better balance */
+    background: #003366;  /* Dark blue background for professionalism */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    color: white;
+}
+
+.logo h1 {
+    font-size: 1.4rem;  /* Slightly increased font size for better visibility */
+    letter-spacing: 1px;  /* Slightly reduced letter spacing for a more refined look */
+    font-weight: 600;  /* Bold font weight for the logo text */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;  /* Increased gap between items for a more spacious feel */
+    margin: 0;
+}
+
+.navigation ul li {
+    font-size: 1.1rem;  /* Slightly increased font size for better readability */
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;  /* Increased padding for easier clickable area */
+    border-radius: 4px;  /* Rounded corners for a softer look */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #003366;  /* Dark blue text color on hover for consistency */
+    background-color: #FFEB3B;  /* Yellow background for hover effect */
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;  /* Increased padding for better touch areas on small screens */
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        gap: 15px;  /* Adjusted gap for smaller screens */
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;  /* Increased logo size slightly for smaller screens */
+    }
+
+    .navigation ul li {
+        font-size: 1rem;  /* Adjusted font size for smaller screens */
+    }
+
+    .navigation ul li a {
+        padding: 8px 16px;  /* Adjusted padding for better spacing on small devices */
+    }
+}

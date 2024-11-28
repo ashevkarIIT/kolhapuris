@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "name": "Classic Running Shoe",
+      "price": 79.99,
+      "image": "./images/image2.png",
+      "category": "Running"
+    },
+    {
+      "id": 2,
+      "name": "Comfort Loafer",
+      "price": 59.99,
+      "image": "./images/image2.png",
+      "category": "Casual"
+    }
+  ]

@@ -1,0 +1,103 @@
+/* Overall container styling */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;  /* Light gray background */
+  font-family: 'Arial', sans-serif;
+  color: #333333; /* Darker text color for readability */
+  padding: 0 20px; /* Added padding on the sides for small screens */
+}
+
+/* Form container styling */
+.login-form {
+  background: #ffffff;  /* White background for the form */
+  padding: 60px; /* Added padding for content space */
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow for form */
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Centers the form */
+}
+
+/* Form field styling */
+form div {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%; /* Set to 100% width to fill the form */
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;  /* Neutral border color */
+  border-radius: 6px;
+  outline: none;
+  color: #333333; /* Dark text color */
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #005f73;  /* Dark teal for focused input */
+  box-shadow: 0 0 5px rgba(0, 95, 115, 0.7);  /* Focused box shadow */
+}
+
+/* Button styling */
+.submit {
+  background-color: #003366; /* Dark teal for the submit button */
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  width: 96%; 
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.submit:hover {
+  background-color: #FFEB3B; 
+  color: #003366;  
+  border: 1px solid #003366;
+
+}
+
+@media (max-width: 800px) {
+  /* Adjustments for medium-sized screens */
+  .login-container {
+    padding: 10px; 
+  }
+  form {
+    padding: 20px; 
+  }
+  input, .submit {
+    font-size: 1rem;  
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for smaller screens */
+  .login-container {
+    padding: 20px; 
+  }
+
+  form {
+    padding: 30px;  
+    width: 100%; 
+    max-width: 100%; 
+  }
+
+  input, .submit {
+    font-size: 0.9rem;  
+    padding: 10px; 
+  }
+}
+
+/* Underlined span styling */
+.line {
+  text-decoration: underline;
+  color: #003366; /* Teal color for underline */
+}
