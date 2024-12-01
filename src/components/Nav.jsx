@@ -40,7 +40,7 @@ const Nav = () => {
                     <></>
                     )}
                     {isLoggedIn ? (
-                        <li onClick={handleLogout}>Logout</li>
+                        <li onClick={handleLogout}><Link to="/login">LogOut</Link></li>
                     ) : (
                         <li><Link to="/login">Login</Link></li>
                     )}

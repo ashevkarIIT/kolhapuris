@@ -1,3 +1,4 @@
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Routes, Route, Link } from 'react-router-dom';
 import Registration from './components/Registration';
 import Login from './components/Login';
@@ -7,9 +8,9 @@ import ProductDetails from './components/ProductDetails';
 import ShoppingCart from './components/ShoppingCart';
 import Checkout from './components/Checkout';
 import OrderConfirmation from './components/OrderConfirmation';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Nav from './components/Nav';
-import AppStyle from './AppStyle.css';
+// import AppStyle from './AppStyle.css';
 import Home from './components/Home'
 import React,{useState, useEffect} from 'react';
 
@@ -39,7 +40,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />        <Route path="/profile" element={<ProfileEdit />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />     
+        <Route path="/profile" element={<ProfileEdit />} />
         <Route path="/products" element={<ProductListing />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<ShoppingCart />} />
@@ -47,6 +49,8 @@ function App() {
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/home" element={<Home />} />
         <Route path="/registration" element={<Registration/>} />
+        <Route path="/product/:productId" element={<ProductDetails />} />
+
 
 
       </Routes>

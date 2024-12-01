@@ -1,0 +1,167 @@
+{
+  "categories": [
+    {
+      "name": "Kolhapuri",
+      "products": [
+        {
+          "id": 1,
+          "name": "Tan Hand Crafted Kolhapuri",
+          "price": "$50",
+          "description": "Handcrafted tan leather Kolhapuri sandals with intricate detailing, perfect for traditional and casual wear.",
+          "sizes": ["6", "7", "8", "9"],
+          "imageUrls": [
+            "./images/p1.1.png",
+            "./images/p1.2.png",
+            "./images/p1.3.png",
+            "./images/p1.4.png"
+          ]
+          ,
+          "gender": "Women"
+        },
+        {
+          "id": 2,
+          "name": "Maroon Faux Leather Kolhapuri",
+          "price": "$55",
+          "description": "Elegant maroon Kolhapuris made from premium faux leather, offering a stylish yet comfortable fit.",
+          "sizes": ["6", "7", "8", "9", "10"],
+          "imageUrls": ["./images/p3.1.png",
+          "./images/p3.2.png",
+          "./images/p3.3.png",
+          "./images/p3.4.png"
+          ],
+          "gender": "Women"
+        },
+        {
+          "id": 3,
+          "name": "Traditional Black Kolhapuri",
+          "price": "$60",
+          "description": "Classic black Kolhapuri sandals with a traditional touch, designed for men seeking both comfort and style.",
+          "sizes": ["8", "9", "10", "11", "12"],
+          "imageUrls": ["./images/p4.1.png",
+          "./images/p4.2.png",
+          "./images/p4.3.png",
+          "./images/p4.4.png",
+          "./images/p4.5.png",
+          "./images/p4.6.png"
+          ],
+          "gender": "Men"
+        }
+      ]
+    },
+    {
+      "name": "Jalsa Collection",
+      "products": [
+        {
+          "id": 4,
+          "name": "Red Velvet Jalsa",
+          "price": "$70",
+          "description": "Luxurious red velvet Jalsa footwear with intricate embroidery for festive occasions.",
+          "sizes": ["6", "7", "8", "9"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        },
+        {
+          "id": 5,
+          "name": "Black and Gold Embroidered Jalsa",
+          "price": "$75",
+          "description": "Chic black Jalsa with gold embroidery, offering a regal look for formal gatherings.",
+          "sizes": ["6", "7", "8", "9", "10"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        }
+      ]
+    },
+    {
+      "name": "Heels",
+      "products": [
+        {
+          "id": 6,
+          "name": "Stiletto Kolhapuri",
+          "price": "$80",
+          "description": "A unique blend of tradition and modern style, these stiletto Kolhapuris are perfect for parties.",
+          "sizes": ["6", "7", "8"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        },
+        {
+          "id": 7,
+          "name": "Classic Beige Block Heel",
+          "price": "$85",
+          "description": "Comfortable beige block heels for everyday wear, combining elegance and functionality.",
+          "sizes": ["6", "7", "8", "9"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        }
+      ]
+    },
+    {
+      "name": "Mules",
+      "products": [
+        {
+          "id": 8,
+          "name": "Tan Suede Mules",
+          "price": "$60",
+          "description": "Soft tan suede mules for a versatile and stylish look, suitable for both casual and semi-formal occasions.",
+          "sizes": ["5", "6", "7", "8", "9"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        },
+        {
+          "id": 9,
+          "name": "Blue Velvet Mules",
+          "price": "$65",
+          "description": "Blue velvet mules featuring a chic and modern design, perfect for special events.",
+          "sizes": ["6", "7", "8", "9"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Women"
+        }
+      ]
+    },
+    {
+      "name": "Sliders",
+      "products": [
+        {
+          "id": 10,
+          "name": "Classic Black Slider",
+          "price": "$40",
+          "description": "Minimalist black sliders designed for maximum comfort, ideal for everyday use.",
+          "sizes": ["7", "8", "9", "10", "11"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Men"
+        },
+        {
+          "id": 11,
+          "name": "Tan Leather Slider",
+          "price": "$45",
+          "description": "Durable tan leather sliders that combine style and functionality for a laid-back look.",
+          "sizes": ["7", "8", "9", "10", "11", "12"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Men"
+        }
+      ]
+    },
+    {
+      "name": "Men's Collection",
+      "products": [
+        {
+          "id": 12,
+          "name": "Traditional Brown Kolhapuri",
+          "price": "$50",
+          "description": "Authentic brown Kolhapuri sandals crafted for men, perfect for both casual and ethnic attire.",
+          "sizes": ["8", "9", "10", "11", "12"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Men"
+        },
+        {
+          "id": 13,
+          "name": "Formal Black Leather Sandal",
+          "price": "$55",
+          "description": "Formal black leather sandals with a sleek design for professional and formal settings.",
+          "sizes": ["8", "9", "10", "11"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Men"
+        }
+      ]
+    }
+  ] 
+}

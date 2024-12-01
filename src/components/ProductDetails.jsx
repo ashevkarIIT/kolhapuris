@@ -1,57 +1,44 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import './Styles/productDetail.css'; // Style the product details page here
 
-const ProductDetails = () => {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// const ProductDetailPage = () => {
+//   const { productId } = useParams(); // Get the productId from the URL
+//   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    // Fetch the JSON file from the public directory
-    fetch("/public/productDetails.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch product data");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setProduct(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
+//   useEffect(() => {
+//     // Fetch data from JSON or any other API
+//     fetch('/products.json')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         // Find the product with the matching ID
+//         const product = data.categories
+//           .flatMap(category => category.products)
+//           .find(prod => prod.id.toString() === productId);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+//         setProduct(product); // Set the product state
+//       })
+//       .catch((error) => console.error('Error fetching product:', error));
+//   }, [productId]);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+//   // If product is still loading
+//   if (!product) {
+//     return <div>Loading...</div>;
+//   }
 
-  return (
-    <div className="product-details">
-      <h1>{product.name}</h1>
-      <img src={product.image} alt={product.name} />
-      <p>{product.description}</p>
-      <h3>Price: ${product.price}</h3>
-      <h4>Rating: {product.rating} ★</h4>
+//   return (
+//     <div className="product-detail-page">
+//       <h1>{product.name}</h1>
+//       <div className="product-detail">
+//         <div className="product-image" style={{ backgroundImage: `url(${product.imageClass})` }}></div>
+//         <div className="product-info">
+//           <h2>{product.price}</h2>
+//           <p>{product.description}</p>
+//           <p><strong>Sizes Available:</strong> {product.sizes.join(', ')}</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
-      <h2>Customer Reviews:</h2>
-      <ul>
-        {product.reviews.map((review, index) => (
-          <li key={index}>
-            <strong>{review.user}</strong>
-            <p>Rating: {review.rating} ★</p>
-            <p>{review.comment}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default ProductDetails;
+// export default ProductDetailPage;

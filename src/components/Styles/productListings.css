@@ -1,0 +1,104 @@
+/* Landing Page Styles */
+.product-listing-page {
+    font-family: 'Geogrotesque', serif;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: aliceblue;
+  }
+  
+  /* Filter Section */
+  .filter-group {
+    margin: 10px 0;
+  }
+  
+  .filter-group label {
+    margin-right: 10px;
+  }
+  
+  .filter-group select {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  /* Product List Section */
+  .product-lists {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .shopping {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Start with 4 columns */
+    gap: 20px;
+  }
+  
+  /* For screens smaller than 1200px: 3 columns */
+  @media (max-width: 1200px) {
+    .shopping {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* For screens smaller than 768px: 2 columns */
+  @media (max-width: 768px) {
+    .shopping {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .choice {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .product-images {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-images img {
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+  }
+  
+  .product-images img:hover {
+    transform: scale(1.1); /* Slightly zooms the image */
+  }
+  
+  .text {
+    text-align: left;
+    color: gray;
+    font-size: 14px;
+    font-weight: bold;
+    /* top: 15px; */
+  }
+  
+  h2 {
+    font-size: 16px;
+    color: #000;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 1200px) {
+    .options {
+      min-width: 45%;
+      max-width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .options {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+  

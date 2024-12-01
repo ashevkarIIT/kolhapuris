@@ -50,10 +50,11 @@ function ProfileEdit() {
 
   return (
     <div className="login-container">
-      <h2>User Profile</h2>      
+          
       {isEditing ? (
         <form className="login-form" onSubmit={handleSubmit}>
           <div>
+          <h2>Edit Profile</h2>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -64,7 +65,7 @@ function ProfileEdit() {
               required
             />
           </div>
-          <div>
+          <div>        
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -91,6 +92,7 @@ function ProfileEdit() {
         </form>
       ) : (
         <div className='login-form'>
+          <h2>User Profile</h2>  
           <p><strong>Name:</strong> {user.name}</p>
           <p><strong>Email:</strong> {user.email}</p>
           <p><strong>Username:</strong> {user.username}</p>

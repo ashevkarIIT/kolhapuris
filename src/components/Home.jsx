@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Styles/home.css';
 
 const LandingPage = () => {
+  const [products, setProducts] = useState([]);
+
+  // Fetch data from JSON file
+  useEffect(() => {
+    fetch('/products.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const oneProductFromEachCategory = data.categories.map(category => category.products[0]);
+        setProducts(oneProductFromEachCategory);
+        // const kolhapuriProducts = data.categories.find(category => category.name === "Kolhapuri").products;
+        // setProducts(kolhapuriProducts); // Set products from Kolhapuri category
+      })
+      .catch((error) => console.error('Error fetching products:', error));
+  }, []);
+
+
   return (
     <div className="landing-page">
           <div class="background-image">
-            <button class='shop-now-button'>Shop Now</button>
+            {/* <button class='shop-now-button'>Shop Now</button> */}
           </div>
 
           <div class="scrolling-banner">
@@ -18,57 +34,58 @@ const LandingPage = () => {
               </span>
             </section>
           </div>
-        <div class="product-list">
-        <section className="gift-sections">
-        <h2>DEALS TOO GOOD TO MISS</h2>
-        <ul>
-            <li>
-            <div class="img1"/>
-            <span class="text">SHOES UNDER $50</span>
-            </li>
-
-            <li>
-            <div class="img1"/>
-            <span class="text">SHOES UNDER $50</span>
-            </li>
-
-            <li>
-            <div class="img2"/>
-            <span class="text">SHOES UNDER $50</span>
-            </li>
-
-            <li>
-            <div class="img3"/>
-            <span class="text">SHOES UNDER $50</span>
-            </li>
-
-            <li>
-            <div class="img4"/>
-            <span class="text">SHOES UNDER $50</span>
-            </li>           
-        </ul>
+  
+          <div className="product-list">
+        <h2>EXPLORE THE COLLECTION</h2>
+        <section className="shopping-options">
+          {products.map((product) => (
+            <div className="options" key={product.id}>
+            
+            <div className="product-images">
+                {Array.isArray(product.imageUrls) && product.imageUrls.length > 0 ? (
+                  <img 
+                  key={0} 
+                  src={product.imageUrls[0]} 
+                  alt={product.name} 
+                  className="product-image" 
+                />  
+                ) : (
+                  <p>No images available</p>  // Fallback message if no images
+                )}
+              </div>
+              <p className="text">
+                {product.name}
+                <h2>{product.price}</h2>
+              </p>
+            </div>
+          ))}
         </section>
-        </div>
+      </div>
 
-        <div className="shopping-made-easy">
-          <h3>SHOPPING MADE EASY</h3>
-          <h4>FIND WHAT WORKS FOR YOU</h4>
-          <section className="shopping-options">
+        <div className="product-display1">
+          <h3>HOT DEALS RIGHT NOW</h3>
+          <h5>DEALS TOO GOOD TO MISS</h5>
+
+          <section className="banner">
             <div className="option">
-              <h5>E-GIFT CARDS</h5>
-              <p>PURCHASE E-GIFT CARDS FOR EASY GIFT GIVING</p>
+            <div class="img1">
+            <p className='banner-text'>Tan Hand Crafted Kolhapuri</p>
+            </div>
             </div>
             <div className="option">
-              <h5>EMAIL SIGN-UP</h5>
-              <p>BE IN THE KNOW FOR THE LATEST PUMA NEWS</p>
+            <div class="img2">
+            <p className='banner-text'>Earthen Clay Faux Leather Kolhapuri</p>
+            </div>
             </div>
             <div className="option">
-              <h5>DOWNLOAD PUMA APP</h5>
-              <p>DISCOVER APP EXCLUSIVES, SHOP OUR NEWEST COLLECTIONS AND VIEW OUR LAUNCH CALENDAR</p>
+            <div class="img3">
+            <p className='banner-text'>Maroon and Metallic Grey Faux Leather Kolhapuris</p>
+            </div>
             </div>
             <div className="option">
-              <h5>BUY NOW, PAY LATER</h5>
-              <p>JUST LIKE IT SAYS. SHOP USING PAYPAL, AFTERPAY, OR KLARNA</p>
+            <div class="img4">
+            <p className='banner-text'>Traditional Black Kolhapuri</p>
+            </div>
             </div>
           </section>
         </div>
