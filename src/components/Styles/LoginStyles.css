@@ -28,14 +28,14 @@ form div {
   margin-bottom: 20px;
 }
 
-input {
-  width: 90%; /* Set to 100% width to fill the form */
+.loginInput {
+  width: 90%; 
   padding: 12px;
   font-size: 1rem;
-  border: 2px solid #ccc;  /* Neutral border color */
+  border: 2px solid #ccc;  
   border-radius: 6px;
   outline: none;
-  color: #333333; /* Dark text color */
+  color: #333333; 
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 

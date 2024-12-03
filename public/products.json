@@ -32,6 +32,15 @@
           "gender": "Women"
         },
         {
+          "id": 12,
+          "name": "Traditional Brown Kolhapuri",
+          "price": "$50",
+          "description": "Authentic brown Kolhapuri sandals crafted for men, perfect for both casual and ethnic attire.",
+          "sizes": ["8", "9", "10", "11", "12"],
+          "imageUrls": ["./images/p1.1.png"],
+          "gender": "Men"
+        },
+        {
           "id": 3,
           "name": "Traditional Black Kolhapuri",
           "price": "$60",
@@ -141,17 +150,9 @@
       ]
     },
     {
-      "name": "Men's Collection",
+      "name": "Sandal",
       "products": [
-        {
-          "id": 12,
-          "name": "Traditional Brown Kolhapuri",
-          "price": "$50",
-          "description": "Authentic brown Kolhapuri sandals crafted for men, perfect for both casual and ethnic attire.",
-          "sizes": ["8", "9", "10", "11", "12"],
-          "imageUrls": ["./images/p1.1.png"],
-          "gender": "Men"
-        },
+        
         {
           "id": 13,
           "name": "Formal Black Leather Sandal",

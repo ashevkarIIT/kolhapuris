@@ -1,5 +1,5 @@
 /* Header.css */
-.header {
+.main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,4 +62,15 @@
     .navigation ul li a {
         padding: 8px 16px;  /* Adjusted padding for better spacing on small devices */
     }
+}
+
+.nav {
+    list-style:none;
+    display: flex;
+    justify-content:flex-end;
+    padding-right: 2rem;
+    gap: 20px;  /* Increased gap between items for a more spacious feel */
+    margin: 0;
+    background-color: #b5b3b3;
+    
 }

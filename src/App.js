@@ -1,5 +1,5 @@
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import ProfileEdit from './components/ProfileEdit';
