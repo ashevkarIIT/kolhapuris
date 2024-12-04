@@ -36,12 +36,12 @@ function ShoppingCart() {
     return cartItems.reduce((total, item) => total + Number(item.price.substring(1)) * item.quantity, 0);
   };
 
-  const handleCheckout = () => {
-    localStorage.removeItem('cart');
-    setCartItems([]);
-    alert('Thank you for your purchase!');
-    navigate('/');
-  };
+  // const handleCheckout = () => {
+  //   localStorage.removeItem('cart');
+  //   setCartItems([]);
+  //   alert('Thank you for your purchase!');
+  //   navigate('/');
+  // };
 
   if (cartItems.length === 0) {
     return (

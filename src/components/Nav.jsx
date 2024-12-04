@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { RiLoginBoxLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { FiShoppingCart } from "react-icons/fi";
+// import { FiShoppingCart } from "react-icons/fi";
 
 
 
