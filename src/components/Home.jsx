@@ -3,6 +3,7 @@ import './Styles/home.css';
 
 const LandingPage = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   // Fetch data from JSON file
   useEffect(() => {
@@ -10,47 +11,45 @@ const LandingPage = () => {
       .then((response) => response.json())
       .then((data) => {
         const oneProductFromEachCategory = data.categories.map(category => category.products[0]);
-        setProducts(oneProductFromEachCategory);
-        // const kolhapuriProducts = data.categories.find(category => category.name === "Kolhapuri").products;
-        // setProducts(kolhapuriProducts); // Set products from Kolhapuri category
+        setProducts(oneProductFromEachCategory); // Set the first product from each category
+        setCategories(data.categories); // Save all categories
       })
       .catch((error) => console.error('Error fetching products:', error));
   }, []);
 
-
   return (
     <div className="landing-page">
-          <div class="background-image">
-            {/* <button class='shop-now-button'>Shop Now</button> */}
-          </div>
+      <div className="background-image">
+        {/* <button className='shop-now-button'>Shop Now</button> */}
+      </div>
 
-          <div class="scrolling-banner">
-            <section class="banner-content">
-              <span>BLACK FRIDAY - 60% OFF -
-              BLACK FRIDAY - 60% OFF - 
-              BLACK FRIDAY - 60% OFF - 
-              BLACK FRIDAY - 60% OFF - 
-              BLACK FRIDAY - 60% OFF - 
-              </span>
-            </section>
-          </div>
-  
-          <div className="product-list">
+      <div className="scrolling-banner">
+        <section className="banner-content">
+          <span>
+            BLACK FRIDAY - 60% OFF -
+            BLACK FRIDAY - 60% OFF - 
+            BLACK FRIDAY - 60% OFF - 
+            BLACK FRIDAY - 60% OFF - 
+            BLACK FRIDAY - 60% OFF -
+          </span>
+        </section>
+      </div>
+
+      <div className="product-list">
         <h2>EXPLORE THE COLLECTION</h2>
         <section className="shopping-options">
           {products.map((product) => (
             <div className="options" key={product.id}>
-            
-            <div className="product-images">
+              <div className="product-images">
                 {Array.isArray(product.imageUrls) && product.imageUrls.length > 0 ? (
-                  <img 
-                  key={0} 
-                  src={product.imageUrls[0]} 
-                  alt={product.name} 
-                  className="product-image" 
-                />  
+                  <img
+                    key={0}
+                    src={product.imageUrls[0]} // Display the first image of the product
+                    alt={product.name}
+                    className="product-image"
+                  />
                 ) : (
-                  <p>No images available</p>  // Fallback message if no images
+                  <p>No images available</p> // Fallback message if no images
                 )}
               </div>
               <p className="text">
@@ -62,34 +61,70 @@ const LandingPage = () => {
         </section>
       </div>
 
-        <div className="product-display1">
-          <h3>HOT DEALS RIGHT NOW</h3>
-          <h5>DEALS TOO GOOD TO MISS</h5>
-
-          <section className="banner">
-            <div className="option">
-            <div class="img1">
-            <p className='banner-text'>Tan Hand Crafted Kolhapuri</p>
-            </div>
-            </div>
-            <div className="option">
-            <div class="img2">
-            <p className='banner-text'>Earthen Clay Faux Leather Kolhapuri</p>
-            </div>
-            </div>
-            <div className="option">
-            <div class="img3">
-            <p className='banner-text'>Maroon and Metallic Grey Faux Leather Kolhapuris</p>
-            </div>
-            </div>
-            <div className="option">
-            <div class="img4">
-            <p className='banner-text'>Traditional Black Kolhapuri</p>
-            </div>
-            </div>
-          </section>
-        </div>
+      <div className="bg1">
+        {/* <button className='shop-now-button'>Shop Now</button> */}
+      </div>
       
+      <div className="product-section"> 
+  <div className="product-header">
+    <h1>HOT DEALS RIGHT NOW</h1>
+    <h4>DEALS TOO GOOD TO MISS</h4>
+  </div>
+  
+  <div className="prod-grid">
+    {products.map((product) => {
+      const category = categories.find((category) =>
+        category.products.some((p) => p.id === product.id)
+      );
+      
+      return (
+        <div key={product.id} className="product-card">
+          <div className="product-image">
+            <img
+              src={product.imageUrls[0]}
+              alt={product.name}
+              className="category-image"
+            />
+          </div>
+          <div className="category-name">
+            {category?.name}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+
+      <div className="bg2"></div>
+
+      <div className="product-list">
+        <h2>Jalsa Collection</h2>
+        <section className="shopping-options">
+          {products.map((product) => (
+            <div className="options" key={product.id}>
+              <div className="product-images">
+                {Array.isArray(product.imageUrls) && product.imageUrls.length > 0 ? (
+                  <img
+                    key={0}
+                    src={product.imageUrls[0]} // Display the first image of the product
+                    alt={product.name}
+                    className="product-image"
+                  />
+                ) : (
+                  <p>No images available</p> // Fallback message if no images
+                )}
+              </div>
+              <p className="text">
+                {product.name}
+                <h2>{product.price}</h2>
+              </p>
+            </div>
+          ))}
+        </section>
+      </div>
+      <div className="bg3"></div>
+      <div className="bg4"></div>
 
       <footer>
         {/* Add footer content here */}

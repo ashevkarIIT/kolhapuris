@@ -8,9 +8,7 @@ import ProductDetails from './components/ProductDetails';
 import ShoppingCart from './components/ShoppingCart';
 import Checkout from './components/Checkout';
 import OrderConfirmation from './components/OrderConfirmation';
-// import Footer from './components/Footer';
 import Nav from './components/Nav';
-// import AppStyle from './AppStyle.css';
 import Home from './components/Home'
 import React,{useState, useEffect} from 'react';
 
@@ -50,8 +48,6 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/registration" element={<Registration/>} />
         <Route path="/product/:productId" element={<ProductDetails />} />
-
-
 
       </Routes>
 

@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './Styles/Navbar.css';
-// import Login from './Login';
 import { useNavigate } from 'react-router-dom';
+import { RiLoginBoxLine } from "react-icons/ri";
+import { CgProfile } from "react-icons/cg";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { FiShoppingCart } from "react-icons/fi";
+
+
+
+
 
 
 const Nav = () => {
@@ -28,17 +35,18 @@ const Nav = () => {
         
         <header className="header">
             <nav className="nav">
-                <div className="nav-logo">
+                
                 {isLoggedIn ? (
-                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="/profile"><CgProfile/>Profile</Link></li>
                     ) : (
                     <></>
                     )}
                     {isLoggedIn ? (
-                        <li onClick={handleLogout}><Link to="/login">LogOut</Link></li>
+                        <li onClick={handleLogout}><Link to="/login"><RiLogoutBoxLine />Logout</Link></li>
                     ) : (
-                        <li><Link to="/login">Login</Link></li>
-                    )}                </div>
+                        <li><Link to="/login"><RiLoginBoxLine />Login</Link></li>
+                    )}  
+                
             </nav>
             <div class="main">
             <div className="logo">
@@ -47,9 +55,8 @@ const Nav = () => {
             <nav className="navigation">
                 <ul>
                     <li><Link to="/Home">Home</Link></li>
-                    <li><Link to="/women">Women</Link></li>
-                    <li><Link to="/men">Men</Link></li>
-                    <li><Link to="/products">Products</Link></li>
+                    <li><Link to="/products?gender=Women">Women</Link></li>
+                    <li><Link to="/products?gender=Men">Men</Link></li>
                     <li><Link to="/cart">Cart</Link></li>
                     
                 </ul>

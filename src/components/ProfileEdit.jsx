@@ -53,9 +53,11 @@ function ProfileEdit() {
           
       {isEditing ? (
         <form className="login-form" onSubmit={handleSubmit}>
-          <div>
           <h2>Edit Profile</h2>
-            <label htmlFor="name">Name:</label>
+
+          <div className='edit-profile'>
+          <div>
+            <label htmlFor="name">Name :</label>
             <input
               type="text"
               id="name"
@@ -66,7 +68,7 @@ function ProfileEdit() {
             />
           </div>
           <div>        
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email :</label>
             <input
               type="email"
               id="email"
@@ -87,8 +89,9 @@ function ProfileEdit() {
               required
             />
           </div>
-          <button className="save" type="submit">Save Changes</button>
-          <button className="cancel" type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+          </div>
+          <button className="submit" type="submit">Save Changes</button>
+          <button className="submit" type="button" onClick={() => setIsEditing(false)}>Cancel</button>
         </form>
       ) : (
         <div className='login-form'>

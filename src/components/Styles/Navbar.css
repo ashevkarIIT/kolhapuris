@@ -1,20 +1,20 @@
 /* Header.css */
 .main {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
-    padding: 12px 30px;  /* Slightly adjusted padding for better balance */
-    background: #003366;  /* Dark blue background for professionalism */
+    padding: 12px 30px;  
+    background: #513700;  /* Dark blue background for professionalism */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    color: white;
+    color: #f4f4f4;
+    font-weight: 600;
 }
 
 .logo h1 {
-    font-size: 1.4rem;  /* Slightly increased font size for better visibility */
-    letter-spacing: 1px;  /* Slightly reduced letter spacing for a more refined look */
-    font-weight: 600;  /* Bold font weight for the logo text */
+    font-size: 1.4rem;  
+    letter-spacing: 1px;  
+    color: #f4f4f4; 
 }
-
 .navigation ul {
     list-style: none;
     display: flex;
@@ -29,26 +29,25 @@
 .navigation ul li a {
     color: white;
     text-decoration: none;
-    padding: 6px 12px;  /* Increased padding for easier clickable area */
-    border-radius: 4px;  /* Rounded corners for a softer look */
+    padding: 6px 12px;  
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navigation ul li a:hover {
-    color: #003366;  /* Dark blue text color on hover for consistency */
-    background-color: #FFEB3B;  /* Yellow background for hover effect */
+    color: #513700;  
+    background-color: #FFEB3B;  
+    border-radius: 20px;
 }
 
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;  /* Increased padding for better touch areas on small screens */
     }
 
     .navigation ul {
         flex-direction: column;
-        gap: 15px;  /* Adjusted gap for smaller screens */
+        gap: 15px; 
     }
 
     .logo h1 {
@@ -65,12 +64,24 @@
 }
 
 .nav {
-    list-style:none;
     display: flex;
     justify-content:flex-end;
-    padding-right: 2rem;
+    align-items: center;
+    padding: 12px 30px;  
+    background: #f4f4f4;  /* Dark blue background for professionalism */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    color: #003366;
+    font-weight: 600;
+    list-style: none;
+    gap: 2rem;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
     gap: 20px;  /* Increased gap between items for a more spacious feel */
     margin: 0;
-    background-color: #b5b3b3;
-    
+}
+
+.nav ul li {
+    font-size: 1.1rem;  /* Slightly increased font size for better readability */
 }

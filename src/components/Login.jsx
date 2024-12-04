@@ -43,12 +43,6 @@ function Login() {
     });
   };
 
-  // const logOut = async (e)=>{
-  //   e.preventDefault();
-  //   localStorage.removeItem('user');
-  //   alert('Logged out successfully');
-  //   navigate('/login')
-  // }
   
 
   return (
@@ -58,7 +52,7 @@ function Login() {
         <div>
           <label htmlFor="email">Email:</label>
           <input
-          className='loginInput'
+          className='Input'
             type="email"
             id="email"
             value={email}
@@ -69,6 +63,7 @@ function Login() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+            className='Input'
             type="password"
             id="password"
             value={password}

@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import './Styles/productListings.css';
-import { IoChevronDownOutline } from "react-icons/io5";
 import { PiSlidersHorizontal } from "react-icons/pi";
-import { FaCircleChevronDown } from "react-icons/fa6";
+import { useLocation } from 'react-router-dom';
+import { FaCartArrowDown } from "react-icons/fa";
 
 
 
-const LandingPage = () => {
+const ProductListings = () => {
+    const location = useLocation();
     const [categories, setCategories] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [categoryFilter, setCategoryFilter] = useState('');
     const [priceFilter, setPriceFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
     const [sortFilter, setSortFilter] = useState('');
+    const [sizeFilter, setSizeFilter] = useState('');
 
+
+  // Parse query parameters
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const gender = params.get('gender');
+        if (gender) {
+          setGenderFilter(gender);
+        }
+      }, [location.search]);
     // Fetch data from JSON file
     useEffect(() => {
         fetch('/products.json')
@@ -50,7 +61,9 @@ const LandingPage = () => {
           (priceFilter === 'high' && price >= 60)||
           (priceFilter === 'all' && true);
     
-        return categoryMatch && genderMatch && priceMatch;
+          const sizeMatch = !sizeFilter || product.sizes.includes(sizeFilter);
+
+          return categoryMatch && genderMatch && priceMatch && sizeMatch;
       });
     
       // Sorting
@@ -67,8 +80,9 @@ const LandingPage = () => {
       }
     
       setFilteredProducts(updatedProducts);
-    }, [categoryFilter, priceFilter, genderFilter, sortFilter, categories]);
+    }, [categoryFilter, priceFilter, genderFilter, sortFilter, categories,sizeFilter]);
 
+    
     // Sidebar Filters
     const [expandedSection, setExpandedSection] = useState(null);
 
@@ -76,8 +90,10 @@ const LandingPage = () => {
         { id: 'gender', label: 'Gender' },
         { id: 'price', label: 'Shop by Price' },
         { id: 'categories', label: 'Categories' },
+        { id: 'size', label: 'Size' },
     ];
 
+    
     const toggleSection = (sectionId) => {
       // Don't collapse the categories section if it's already expanded
       if (sectionId === 'categories' && expandedSection !== 'categories') {
@@ -108,7 +124,7 @@ const LandingPage = () => {
       <div className="container">
       <div className="content-header">
       <div className="search-header">
-                    <span>Search results for <p> jordan (1311)</p></span>
+                    <span>Search results for <p> footwear</p></span>
                     
                 </div>
         <div className="filter-controls">
@@ -172,6 +188,30 @@ const LandingPage = () => {
                                 ))}
                             </div>
                         )}
+
+{expandedSection === section.id && section.id === 'size' && (
+    <div className="filter-content">
+        <label>
+            <input
+                type="checkbox"
+                checked={sizeFilter === ''}
+                onChange={() => setSizeFilter('')}
+            />
+            All Sizes
+        </label>
+        {/* Iterate through common size options or dynamically generate from products */}
+        {['8', '9', '10', '11', '12'].map((size) => (
+            <label key={size}>
+                <input
+                    type="checkbox"
+                    checked={sizeFilter === size}
+                    onChange={() => setSizeFilter(size)}
+                />
+                {size}
+            </label>
+        ))}
+    </div>
+)}
 
                         {expandedSection === section.id && section.id === 'gender' && (
                           
@@ -253,7 +293,8 @@ const LandingPage = () => {
                                         onClick={() => handleAddToCart(product)}
                                         className="add-to-cart-button"
                                     >
-                                        Add to Cart
+                                        
+                                        Add to Cart <FaCartArrowDown />
                                     </button>  
                                 </div>
                             </div>
@@ -268,4 +309,4 @@ const LandingPage = () => {
     );
 };
 
-export default LandingPage;
+export default ProductListings;
