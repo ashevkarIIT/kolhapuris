@@ -1,87 +1,154 @@
 /* Header.css */
 .main {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 12px 30px;  
-    background: #513700;  /* Dark blue background for professionalism */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    color: #f4f4f4;
-    font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: #513700; /* Dark blue background for professionalism */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: #f4f4f4;
+  font-weight: 600;
 }
 
 .logo h1 {
-    font-size: 1.4rem;  
-    letter-spacing: 1px;  
-    color: #f4f4f4; 
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #f4f4f4;
 }
 .navigation ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;  /* Increased gap between items for a more spacious feel */
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Increased gap between items for a more spacious feel */
+  margin: 0;
 }
 
 .navigation ul li {
-    font-size: 1.1rem;  /* Slightly increased font size for better readability */
+  font-size: 1.1rem; /* Slightly increased font size for better readability */
 }
 
 .navigation ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 6px 12px;  
-    transition: color 0.3s ease, background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navigation ul li a:hover {
-    color: #513700;  
-    background-color: #FFEB3B;  
-    border-radius: 20px;
+  color: #513700;
+  background-color: #ffeb3b;
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .navigation ul {
-        flex-direction: column;
-        gap: 15px; 
-    }
+  .navigation ul {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    .logo h1 {
-        font-size: 1.3rem;  /* Increased logo size slightly for smaller screens */
-    }
+  .logo h1 {
+    font-size: 1.3rem; /* Increased logo size slightly for smaller screens */
+  }
 
-    .navigation ul li {
-        font-size: 1rem;  /* Adjusted font size for smaller screens */
-    }
+  .navigation ul li {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
 
-    .navigation ul li a {
-        padding: 8px 16px;  /* Adjusted padding for better spacing on small devices */
-    }
+  .navigation ul li a {
+    padding: 8px 16px; /* Adjusted padding for better spacing on small devices */
+  }
 }
 
 .nav {
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    padding: 12px 30px;  
-    background: #f4f4f4;  /* Dark blue background for professionalism */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    color: #003366;
-    font-weight: 600;
-    list-style: none;
-    gap: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 30px;
+  background: #f4f4f4; /* Dark blue background for professionalism */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: #003366;
+  font-weight: 600;
+  list-style: none;
+  gap: 2rem;
 }
 .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;  /* Increased gap between items for a more spacious feel */
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Increased gap between items for a more spacious feel */
+  margin: 0;
 }
 
 .nav ul li {
-    font-size: 1.1rem;  /* Slightly increased font size for better readability */
+  font-size: 1.1rem; /* Slightly increased font size for better readability */
+}
+
+/* Styles/Navbar.css */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: #f4f4f4;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    background-color: #513700;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 10px 0;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 2%;
+    margin: 0;
+  }
+
+  .navigation ul li a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav {
+    justify-content: center;
+    padding: 10px;
+  }
 }

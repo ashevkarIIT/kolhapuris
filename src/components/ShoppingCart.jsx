@@ -36,12 +36,6 @@ function ShoppingCart() {
     return cartItems.reduce((total, item) => total + Number(item.price.substring(1)) * item.quantity, 0);
   };
 
-  // const handleCheckout = () => {
-  //   localStorage.removeItem('cart');
-  //   setCartItems([]);
-  //   alert('Thank you for your purchase!');
-  //   navigate('/');
-  // };
 
   if (cartItems.length === 0) {
     return (
@@ -107,7 +101,6 @@ function ShoppingCart() {
     <div className="free-shipping-progress">
       <div className="progress-bar" style={{width: `${(calculateTotal() / 50) * 100}%`}}></div>
     </div>
-    <p>$50</p>
   </div>
 
   <button className="checkout-button">Checkout</button>  

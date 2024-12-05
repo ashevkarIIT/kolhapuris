@@ -1,0 +1,133 @@
+.product-detail-container {
+  display: flex;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.product-gallery {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+
+.thumbnail.selected {
+  border-color: #000;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-image {
+  flex: 1;
+  position: relative;
+  width: 100%;  /* Ensures the main image takes the available width */
+  max-width: 700px;  /* Optional: Set a maximum width for large screens */
+  height: auto;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;  /* Optional: Limit the height relative to the viewport */
+}
+
+.image-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.product-info {
+  flex: 1;
+  max-width: 400px;
+}
+
+.product-header {
+  margin-bottom: 2rem;
+}
+
+.product-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.category {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.size-selector {
+  margin: 2rem 0;
+}
+
+.size-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.size-guide {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.size-button {
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  background: none;
+  cursor: pointer;
+}
+
+.size-button.selected {
+  border-color: #000;
+  background: #f5f5f5;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 1rem;
+  background: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.add-to-cart:hover {
+  background: #333;
+}

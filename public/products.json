@@ -10,10 +10,10 @@
           "description": "Handcrafted tan leather Kolhapuri sandals with intricate detailing, perfect for traditional and casual wear.",
           "sizes": ["6", "7", "8", "9"],
           "imageUrls": [
-            "./images/p1.1.png",
-            "./images/p1.2.png",
-            "./images/p1.3.png",
-            "./images/p1.4.png"
+            "/images/p1.1.png",
+            "/images/p1.2.png",
+            "/images/p1.3.png",
+            "/images/p1.4.png"
           ]
           ,
           "gender": "Women"
@@ -24,10 +24,10 @@
           "price": "$55",
           "description": "Elegant maroon Kolhapuris made from premium faux leather, offering a stylish yet comfortable fit.",
           "sizes": ["6", "7", "8", "9", "10"],
-          "imageUrls": ["./images/p3.1.png",
-          "./images/p3.2.png",
-          "./images/p3.3.png",
-          "./images/p3.4.png"
+          "imageUrls": ["/images/p3.1.png",
+          "/images/p3.2.png",
+          "/images/p3.3.png",
+          "/images/p3.4.png"
           ],
           "gender": "Women"
         },
@@ -37,7 +37,9 @@
           "price": "$50",
           "description": "Authentic brown Kolhapuri sandals crafted for men, perfect for both casual and ethnic attire.",
           "sizes": ["8", "9", "10", "11", "12"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/p2.1.png",
+        "/images/p2.2.png",
+      "/images/p2.3.png"],
           "gender": "Men"
         },
         {
@@ -46,12 +48,12 @@
           "price": "$60",
           "description": "Classic black Kolhapuri sandals with a traditional touch, designed for men seeking both comfort and style.",
           "sizes": ["8", "9", "10", "11", "12"],
-          "imageUrls": ["./images/p4.1.png",
-          "./images/p4.2.png",
-          "./images/p4.3.png",
-          "./images/p4.4.png",
-          "./images/p4.5.png",
-          "./images/p4.6.png"
+          "imageUrls": ["/images/p4.1.png",
+          "/images/p4.2.png",
+          "/images/p4.3.png",
+          "/images/p4.4.png",
+          "/images/p4.5.png",
+          "/images/p4.6.png"
           ],
           "gender": "Men"
         }
@@ -62,20 +64,29 @@
       "products": [
         {
           "id": 4,
-          "name": "Red Velvet Jalsa",
+          "name": "Beagum Jalsa",
           "price": "$70",
-          "description": "Luxurious red velvet Jalsa footwear with intricate embroidery for festive occasions.",
+          "description": "Luxurious Jalsa footwear with intricate embroidery for festive occasions.",
           "sizes": ["6", "7", "8", "9"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/j1.1.png","/images/j1.2.png","/images/j1.3.png"],
           "gender": "Women"
         },
         {
           "id": 5,
-          "name": "Black and Gold Embroidered Jalsa",
+          "name": "Saira Jalsa",
+          "price": "$75",
+          "description": "Chic green Jalsa with gold embroidery, offering a regal look for formal gatherings.",
+          "sizes": ["6", "7", "8", "9", "10"],
+          "imageUrls": ["/images/j2.1.png","/images/j2.2.png"],
+          "gender": "Women"
+        },
+        {
+          "id": 20,
+          "name": "Kashish Jalsa",
           "price": "$75",
           "description": "Chic black Jalsa with gold embroidery, offering a regal look for formal gatherings.",
           "sizes": ["6", "7", "8", "9", "10"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/j3.1.png"],
           "gender": "Women"
         }
       ]
@@ -85,20 +96,20 @@
       "products": [
         {
           "id": 6,
-          "name": "Stiletto Kolhapuri",
+          "name": "Stiletto heels",
           "price": "$80",
           "description": "A unique blend of tradition and modern style, these stiletto Kolhapuris are perfect for parties.",
           "sizes": ["6", "7", "8"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/h1.1.png","/images/h1.2.png","/images/h1.3.png"],
           "gender": "Women"
         },
         {
           "id": 7,
-          "name": "Classic Beige Block Heel",
+          "name": "Chevron Gold",
           "price": "$85",
           "description": "Comfortable beige block heels for everyday wear, combining elegance and functionality.",
           "sizes": ["6", "7", "8", "9"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/h2.1.png","/images/h2.2.png"],
           "gender": "Women"
         }
       ]
@@ -108,11 +119,11 @@
       "products": [
         {
           "id": 8,
-          "name": "Tan Suede Mules",
+          "name": "Leather Mules",
           "price": "$60",
           "description": "Soft tan suede mules for a versatile and stylish look, suitable for both casual and semi-formal occasions.",
           "sizes": ["5", "6", "7", "8", "9"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/m1.1.png","/images/m1.2.png"],
           "gender": "Women"
         },
         {
@@ -121,7 +132,7 @@
           "price": "$65",
           "description": "Blue velvet mules featuring a chic and modern design, perfect for special events.",
           "sizes": ["6", "7", "8", "9"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/m2.1.png"],
           "gender": "Women"
         }
       ]
@@ -131,20 +142,20 @@
       "products": [
         {
           "id": 10,
-          "name": "Classic Black Slider",
+          "name": "Durar Gold Kolhas",
           "price": "$40",
           "description": "Minimalist black sliders designed for maximum comfort, ideal for everyday use.",
           "sizes": ["7", "8", "9", "10", "11"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/s1.1.png"],
           "gender": "Men"
         },
         {
           "id": 11,
-          "name": "Tan Leather Slider",
+          "name": "Bohemians",
           "price": "$45",
           "description": "Durable tan leather sliders that combine style and functionality for a laid-back look.",
           "sizes": ["7", "8", "9", "10", "11", "12"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/s2.1.png","/images/s2.2.png"],
           "gender": "Men"
         }
       ]
@@ -155,11 +166,20 @@
         
         {
           "id": 13,
-          "name": "Formal Black Leather Sandal",
+          "name": "Peshawari Men's Sandal",
           "price": "$55",
           "description": "Formal black leather sandals with a sleek design for professional and formal settings.",
           "sizes": ["8", "9", "10", "11"],
-          "imageUrls": ["./images/p1.1.png"],
+          "imageUrls": ["/images/sn1.1.png"],
+          "gender": "Men"
+        },
+        {
+          "id": 13,
+          "name": "Peshawari Men's Sandal",
+          "price": "$55",
+          "description": "Formal black leather sandals with a sleek design for professional and formal settings.",
+          "sizes": ["8", "9", "10", "11"],
+          "imageUrls": ["/images/sn2.3.png","/images/sn2.2.png"],
           "gender": "Men"
         }
       ]
