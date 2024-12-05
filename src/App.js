@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
@@ -17,13 +17,42 @@ import ContactUs from './components/ContactUs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const user = localStorage.getItem("user");
     if (user) {
       setIsLoggedIn(true);
     }
-  }, []);
+
+    const routeTitle = () => {
+      switch (location.pathname) {
+        case '/login':
+          return "Login - Ethnics";
+        case '/profile':
+          return "Profile - Ethnics";
+        case '/products':
+          return "Products - Ethnics";
+        case '/cart':
+          return "Shopping Cart - Ethnics";
+        case '/checkout':
+          return "Checkout - Ethnics";
+        case '/order-confirmation':
+          return "Order Confirmation - Ethnics";
+        case '/registration':
+          return "Register - Ethnics";
+        case '/terms':
+          return "Terms of Service - Ethnics";
+        case '/contact':
+          return "Contact Us - Ethnics";
+        default:
+          return "Ethnics - Online Store"; // Default title
+      }
+    };
+
+    document.title = routeTitle();
+
+  }, [location]);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
