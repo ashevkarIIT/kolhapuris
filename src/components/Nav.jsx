@@ -15,11 +15,24 @@ const Nav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
+  const checkLoginStatus = () => {
     const user = localStorage.getItem("user");
     if (user) {
       setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
     }
+  };
+
+  useEffect(() => {
+    checkLoginStatus();
+
+    // event listener for changes in localStorage
+    window.addEventListener("storage", checkLoginStatus);
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("storage", checkLoginStatus);
+    };
   }, []);
 
   const handleLogout = () => {

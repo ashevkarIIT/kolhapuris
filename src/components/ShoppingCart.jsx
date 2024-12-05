@@ -41,9 +41,16 @@ function ShoppingCart() {
   };
 
   const handleCheckout = () => {
-    setOrderPlaced(true);
-    localStorage.removeItem("cart");
-    setCartItems([]);
+    const user = localStorage.getItem("user");
+    if (!user) {
+      // If not logged in, redirect to the login page
+      navigate("/login");
+    } else {
+      // If logged in, proceed with the checkout
+      setOrderPlaced(true);
+      localStorage.removeItem("cart");
+      setCartItems([]);
+    }
   };
 
   if (orderPlaced) {
@@ -106,11 +113,6 @@ function ShoppingCart() {
                 </button>
               </div>
             </div>
-
-            <p>
-              Subtotal: $
-              {(Number(item.price.substring(1)) * item.quantity).toFixed(2)}
-            </p>
           </div>
         ))}
       </div>
@@ -143,7 +145,7 @@ function ShoppingCart() {
             <div
               className="progress-bar"
               style={{
-                width: `${Math.min((calculateTotal() / 50) * 100, 100)}%`
+                width: `${Math.min((calculateTotal() / 50) * 100, 100)}%`,
               }}
             ></div>
           </div>

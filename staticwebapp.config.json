@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/terms",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/contact",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/profile",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}

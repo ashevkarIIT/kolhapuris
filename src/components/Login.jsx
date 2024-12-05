@@ -18,7 +18,7 @@ function Login() {
         localStorage.setItem('user', JSON.stringify(response.user));
         alert('Login successful!');
         navigate('/profile');
-        // window.location.reload();
+        window.location.reload();
       } else {
         alert('Invalid credentials. Please try again.');
       }
