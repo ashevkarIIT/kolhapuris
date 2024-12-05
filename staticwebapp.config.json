@@ -14,11 +14,6 @@
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
-    },
-    {
-      "route": "/profile",
-      "serve": "/index.html",
-      "statusCode": 200
     }
   ]
 }
