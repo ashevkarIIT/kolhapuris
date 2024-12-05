@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "route": "/profile",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
       "route": "/terms",
       "serve": "/index.html",
       "statusCode": 200
