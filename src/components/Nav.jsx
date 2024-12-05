@@ -64,7 +64,7 @@ const Nav = () => {
       <div className="main">
         <div className="logo">
           <Link to="/Home">
-            <h1>Flip-Flops</h1>
+            <h1>Ethnics</h1>
           </Link>
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>

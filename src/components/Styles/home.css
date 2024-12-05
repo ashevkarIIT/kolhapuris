@@ -22,7 +22,7 @@ header {
 
 .background-image, .bg1, .bg2, .bg3, .bg4 {
   background-size: cover;
-  background-position: top;
+  background-position: center;
   height: 60vh;
 }
 
@@ -43,13 +43,12 @@ header {
 }
 
 .bg1 {
-  background-image: url('/public/images/bg1.png');
+  background-image: url('/public/images/bg2.png');
   margin-top: 30px;
 }
 
 .bg2 {
-  background-image: url('/public/images/bg2.png');
-  margin-top: 30px;
+  background-image: url('/public/images/bg1.png');
 }
 
 .bg3 {
@@ -109,17 +108,21 @@ h2, h3, h4, h5 {
   flex-wrap: nowrap;
   gap: 20px;
   flex-shrink: 0;
+  justify-content: space-between;
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
   min-width: 25%;
-  flex-shrink: 1;
+  max-width: 25%;
+  height: 100%;
+  margin-top: 20px;
   box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);
-  height: fit-content;
+  padding: 5px;
+  background: white;
 }
 
 @media (max-width: 1400px) {
@@ -143,15 +146,24 @@ h2, h3, h4, h5 {
   }
   .product-image {
     width: 100%;
-    height: auto;
+    height: 50%;
   }
+}
+
+.product-images {
+  overflow: hidden;
 }
 
 .product-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 400px;
+  object-fit: cover;
   background-position: center;
+  transition: transform 0.5s ease; /* Smooth transition for zoom effect */
+}
+
+.product-images:hover .product-image {
+  transform: scale(1.2); 
 }
 
 .text {
@@ -160,6 +172,7 @@ h2, h3, h4, h5 {
   color: gray;
   font-size: 14px;
   font-weight: bold;
+  padding-top: 15px;
 }
 
 
@@ -170,9 +183,7 @@ h2, h3, h4, h5 {
 /* Product-section */
 .prod-section {
   padding: 2rem;
-  background: #fff;
-
-  
+  background: #fff;  
 }
 
 .product-header {
@@ -213,15 +224,23 @@ h2, h3, h4, h5 {
 }
 
 .prod-card {
-  background: #f8f8f8;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.2s;
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
+.prod-card img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.prod-card:hover {
+  transform: translateY(-10px);
 }
 
 .category-image {
@@ -241,4 +260,7 @@ h2, h3, h4, h5 {
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
+}
+.product-section{
+  margin-top:20px;
 }

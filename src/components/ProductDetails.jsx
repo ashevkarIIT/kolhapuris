@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import './Styles/productDetail.css';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "./Styles/productDetail.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [product, setProduct] = useState(null);
-  
+
   useEffect(() => {
-    fetch('/products.json')
-      .then(response => response.json())
-      .then(data => {
+    fetch("/products.json")
+      .then((response) => response.json())
+      .then((data) => {
         let foundProduct = null;
-        data.categories.forEach(category => {
-          const found = category.products.find(p => p.id === parseInt(id));
+        data.categories.forEach((category) => {
+          const found = category.products.find((p) => p.id === parseInt(id));
           if (found) {
             foundProduct = found;
           }
         });
         setProduct(foundProduct);
       })
-      .catch(error => console.error('Error fetching product:', error));
+      .catch((error) => console.error("Error fetching product:", error));
   }, [id]);
 
   const handleAddToCart = (product) => {
-    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     const updatedCart = [...savedCart, { ...product, quantity: 1 }];
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    alert('Item added to cart!');
-};
-  
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    alert("Item added to cart!");
+  };
+
   if (!product) return <div>Loading...</div>;
 
   return (
@@ -38,9 +38,11 @@ const ProductDetail = () => {
       <div className="product-gallery">
         <div className="thumbnail-list">
           {product.imageUrls.map((img, index) => (
-            <div 
-              key={index} 
-              className={`thumbnail ${selectedImage === index ? 'selected' : ''}`}
+            <div
+              key={index}
+              className={`thumbnail ${
+                selectedImage === index ? "selected" : ""
+              }`}
               onClick={() => setSelectedImage(index)}
             >
               <img src={img} alt={`${product.name} view ${index + 1}`} />
@@ -48,16 +50,22 @@ const ProductDetail = () => {
           ))}
         </div>
         <div className="main-image">
-          <img 
-            src={product.imageUrls[selectedImage]} 
-            alt={product.name} 
-          />
+          <img src={product.imageUrls[selectedImage]} alt={product.name} />
           <div className="image-controls">
-            <button onClick={() => setSelectedImage(prev => prev > 0 ? prev - 1 : 0)}>
+            <button
+              onClick={() =>
+                setSelectedImage((prev) => (prev > 0 ? prev - 1 : 0))
+              }
+            >
               ←
             </button>
-            <button onClick={() => setSelectedImage(prev => 
-              prev < product.imageUrls.length - 1 ? prev + 1 : prev)}>
+            <button
+              onClick={() =>
+                setSelectedImage((prev) =>
+                  prev < product.imageUrls.length - 1 ? prev + 1 : prev
+                )
+              }
+            >
               →
             </button>
           </div>
@@ -81,7 +89,9 @@ const ProductDetail = () => {
             {product.sizes.map((size) => (
               <button
                 key={size}
-                className={`size-button ${selectedSize === size ? 'selected' : ''}`}
+                className={`size-button ${
+                  selectedSize === size ? "selected" : ""
+                }`}
                 onClick={() => setSelectedSize(size)}
               >
                 {size}
@@ -90,10 +100,11 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <button 
-        onClick={() => handleAddToCart(product)}
-
-        className="add-to-cart" >
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="add-to-cart"
+          disabled={!selectedSize}
+        >
           Add to Cart
         </button>
       </div>

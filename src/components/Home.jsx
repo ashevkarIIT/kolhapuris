@@ -6,7 +6,7 @@ const LandingPage = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [jalsa, setJalsa] = useState([]);
-  const [heels, setHeels] = useState([]);
+  const [sliders, setSliders] = useState([]);
 
   const navigate = useNavigate();
 
@@ -22,9 +22,9 @@ const LandingPage = () => {
           (category) => category.name === "Jalsa Collection"
         ).products;
         const heelsCollectionProducts = data.categories.find(
-          (category) => category.name === "Heels"
+          (category) => category.name === "Sliders"
         ).products;
-        setHeels(heelsCollectionProducts);
+        setSliders(heelsCollectionProducts);
         setJalsa(jalsaCollectionProducts);
         setProducts(oneProductFromEachCategory); // Set the first product from each category
         setCategories(data.categories); // Save all categories
@@ -98,8 +98,8 @@ const LandingPage = () => {
             return (
               <div
                 key={product.id}
-                className="product-card"
-                onClick={() => navigate(`/product/${product.id}`)}
+                className="prod-card"
+                onClick={() => navigate(`/products?category=${category?.name}`)}
               >
                 <div className="product-image">
                   <img
@@ -121,7 +121,12 @@ const LandingPage = () => {
         <h2>Jalsa Collection</h2>
         <section className="shopping-options">
           {jalsa.map((product) => (
-            <div className="options" key={product.id}>
+            <div
+              className="options"
+              key={product.id}
+              onClick={() => navigate(`/product/${product.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <div className="product-images">
                 {Array.isArray(product.imageUrls) &&
                 product.imageUrls.length > 0 ? (
@@ -148,8 +153,13 @@ const LandingPage = () => {
       <div className="product-list">
         <h2>Heels Collection</h2>
         <section className="shopping-options">
-          {heels.map((product) => (
-            <div className="options" key={product.id}>
+          {sliders.map((product) => (
+            <div
+              className="options"
+              key={product.id}
+              onClick={() => navigate(`/product/${product.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <div className="product-images">
                 {Array.isArray(product.imageUrls) &&
                 product.imageUrls.length > 0 ? (
@@ -173,7 +183,7 @@ const LandingPage = () => {
       </div>
       <div className="bg3"></div>
 
-      <footer>{/* Add footer content here */}</footer>
+      <footer></footer>
     </div>
   );
 };
