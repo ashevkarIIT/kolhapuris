@@ -6,12 +6,27 @@
       "statusCode": 200
     },
     {
-      "route": "/terms",
+      "route": "/login",
       "serve": "/index.html",
       "statusCode": 200
     },
     {
-      "route": "/contact",
+      "route": "/",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/products/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/cart",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/home",
       "serve": "/index.html",
       "statusCode": 200
     },
